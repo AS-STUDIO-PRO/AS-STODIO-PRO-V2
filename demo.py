@@ -28,5 +28,5 @@ with gr.Blocks() as demo:
 
 if __name__ == "__main__":
     demo.queue(max_size=30)
-    # inline=True launches Gradio directly inside Colab outputs frame
+    # Forced inline view representation
     demo.launch(inline=True, share=True, height=500)

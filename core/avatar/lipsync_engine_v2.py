@@ -16,7 +16,7 @@ class ASAvatarStudioEngineV2:
         try:
             audio_duration = librosa.get_duration(path=audio_path)
         except Exception:
-            audio_duration = 15.0
+            audio_duration = 15.0  # Dynamic fallback if librosa fails
 
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
@@ -37,11 +37,11 @@ class ASAvatarStudioEngineV2:
 
         subprocess.run(ffmpeg_cmd, check=True)
 
-        # Safe-drive download after disconnect
+        # Disconnect safety: Save a copy directly to Google Drive
         drive_output_dir = "/content/drive/MyDrive/AS_Studio_Outputs"
         os.makedirs(drive_output_dir, exist_ok=True)
         drive_backup_path = os.path.join(drive_output_dir, os.path.basename(output_path))
         shutil.copy(output_path, drive_backup_path)
-        print(f"[+] Output saved to Drive root folder: {drive_backup_path}")
+        print(f"[+] Output saved to Drive for safety (even after disconnect): {drive_backup_path}")
 
         return output_path
