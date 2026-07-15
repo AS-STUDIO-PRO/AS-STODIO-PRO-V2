@@ -7,6 +7,16 @@ An upgraded ultra-fast lipsync engine featuring strict original audio removal, d
 
 ---
 
+## ✨ Key Features
+
+* **🚀 Turbo Engine V2:** Optimized segmented processing with hardware acceleration.
+* **🔇 Strict Audio Strip:** Automatically removes any original audio from the target video and replaces it with your driving audio.
+* **🔁 Dynamic Video Looping:** Loops the target video infinitely and cuts exactly where the driving audio ends (`-shortest` integration).
+* **💾 Disconnect-Safe Backup:** Automatically copies the final rendered video to your Google Drive (`AS_Studio_Outputs`) so you never lose your progress.
+* **🎬 Inline Colab Preview:** Interactive Gradio interface launches directly inside your Jupyter/Colab notebook cell.
+
+---
+
 ## ⚡ Quick Start Guide
 
 ### **Step 1: Install Dependencies**
